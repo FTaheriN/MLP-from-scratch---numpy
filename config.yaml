@@ -1,0 +1,56 @@
+random_seed: 12
+
+problem: "classification"
+
+# Model hyperparameters
+learning_rate: [0.001, 0.0001, 0.01, 0.1, 1]
+batch_size: [32, 1, 8, 16, 512]
+num_epochs: [50, 100, 200, 300, 1000]
+
+# Weights
+weights:
+  distribution: normal
+  mu: 0
+  sigma: 1
+  bias: 0
+
+# Model architecture
+model1:
+  num_hidden_layers: 1
+  layer_dims: [3072, 16, 10]
+
+model2:
+  num_hidden_layers: 1
+  layer_dims: [3072, 16, 16, 10]
+
+# Regression model
+model3:
+  num_hidden_layers: 1
+  layer_dims: [46, 16, 16, 1]
+
+# Dataset parameters
+dataset1:
+  path: datasets\cifar-10-batches-py
+  num_classes: 10
+
+dataset2:
+  path: datasets\paris_housing\ParisHousing.csv
+
+# Input type
+input_type: [normalized, doNothing, standardized]
+
+# Momentum
+momentum: False
+
+# Regularization
+regularization: 0.0
+
+# Activation function
+act_func: [relu, sigmoid, tanh, leaky_relu, linear]
+last_act_func: [softmax, sigmoid, linear]
+
+# Loss function
+loss_func: [cross_entropy, mse]
+
+
+
